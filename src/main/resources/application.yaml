@@ -6,4 +6,4 @@ logging:
     root: info
 app:
   sample:
-    key: Good Evening!
+    key: ${APP_SAMPLE_KEY}
