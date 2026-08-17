@@ -4,3 +4,6 @@ spring:
 logging:
   level:
     root: info
+app:
+  sample:
+    key: Good Evening!
