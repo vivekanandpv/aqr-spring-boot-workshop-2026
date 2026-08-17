@@ -2,6 +2,8 @@ package dev.vivekanand.aqrspringbootworkshop.apis;
 
 import dev.vivekanand.aqrspringbootworkshop.entities.Customer;
 import dev.vivekanand.aqrspringbootworkshop.services.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/customers")
+@Tag(name="Customer API", description = "RESTful API for Customers")
 public class CustomerApi {
     private final CustomerService customerService;
 
@@ -16,6 +19,10 @@ public class CustomerApi {
         this.customerService = customerService;
     }
 
+    @Operation(
+            summary = "Get all customers",
+            description = "All customers endpoint"
+    )
     @GetMapping
     public ResponseEntity<List<Customer>> getAllCustomers() {
         return ResponseEntity.ok(customerService.getCustomers());
