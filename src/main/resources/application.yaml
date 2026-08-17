@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: aqr-spring-boot-workshop
